@@ -85,7 +85,7 @@ contract TheToken is ERC20{
     
     function tokenBuyBack(address _seller, uint _tokenReturn, uint _rateSale)public payable returns(bool){
         address seller = _seller;
-       uint etherReturn = (_tokenReturn * _rateSale)/(1**decimals);
+       uint etherReturn = (_tokenReturn / _rateSale)/(1**decimals);
         
         require (msg.sender == seller && seller !=address(0),"Seller must be valid account holder");
         require (_tokenReturn <= balanceOf(seller),"Seller token balance is not sufficient");

@@ -10,10 +10,10 @@ contract ERC20 is IERC20, Ownable{
     mapping (address => uint) private _balances;
     mapping (address => mapping(address => uint )) private _allowances;
    
-    uint internal _totalsupply;
-    string internal name;
-    string internal symbol;
-    uint internal decimals;
+    uint public _totalsupply;
+    string public name;
+    string public symbol;
+    uint public decimals;
     uint internal lockTime;
     address internal contractAddress;
     event _Balances(uint);
